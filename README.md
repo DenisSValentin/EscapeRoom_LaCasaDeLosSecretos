@@ -30,7 +30,7 @@ Los mensajes de la esquina superior derecha te irán guiando.
   <a href="https://denissvalentin.github.io/EscapeRoom_LaCasaDeLosSecretos/"><b>▶ Jugar ahora en el navegador</b></a>
 </p>
 
-No hace falta descargar nada. Se necesita teclado y ratón, así que juega desde un ordenador.
+No hace falta descargar nada. Funciona en ordenador (teclado y ratón) y en móvil o tablet, con controles táctiles.
 
 ---
 
@@ -107,7 +107,9 @@ Para cerrar el servidor, vuelve a la terminal y pulsa `Ctrl + C`.
 
 ---
 
-## ⌨️ Controles
+## 🎮 Controles
+
+### ⌨️ Ordenador
 
 | Tecla | Acción |
 |-------|--------|
@@ -118,6 +120,19 @@ Para cerrar el servidor, vuelve a la terminal y pulsa `Ctrl + C`.
 | `Ctrl` | Agacharse / levantarse |
 
 **Consejo:** pulsa `Shift` para moverte y mirar; vuelve a pulsar `Shift` para liberar el cursor y hacer clic en los objetos.
+
+### 📱 Móvil y tablet
+
+En pantallas táctiles el juego muestra sus propios controles:
+
+| Gesto | Acción |
+|-------|--------|
+| **Joystick** (abajo a la izquierda) | Moverse |
+| **Arrastrar el dedo** por la pantalla | Mirar alrededor |
+| **Tocar** un objeto | Interactuar con él |
+| Botón **Agacharse** (abajo a la derecha) | Agacharse / levantarse |
+
+**Consejo:** juega con el móvil en horizontal. En móviles poco potentes la escena puede ir algo lenta, porque calcula las sombras en tiempo real.
 
 ---
 
@@ -185,7 +200,8 @@ Cambia `8000` por otro número en el comando (por ejemplo `8080`) y abre <http:/
 ├── index.html            # Portada: jugar, controles, documentación y créditos
 ├── juego.html            # El juego
 ├── src/                  # Código del juego (una clase por objeto)
-│   └── MyScene.js        # Escena principal: cámara, luces, controles, picking y bucle
+│   ├── MyScene.js        # Escena principal: cámara, luces, controles, picking y bucle
+│   └── ControlesTactiles.js  # Joystick y gestos; solo se carga en pantallas táctiles
 ├── libs/                 # three.js y librerías auxiliares (sin dependencias externas)
 ├── imgs/                 # Texturas y vídeos
 ├── models/               # Modelos 3D (OBJ/MTL)
