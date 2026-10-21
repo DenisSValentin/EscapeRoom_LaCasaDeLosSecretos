@@ -24,7 +24,7 @@ Los mensajes de la esquina superior derecha te irán guiando.
 
 ---
 
-## 🌐 Jugar online
+## 🎮 Jugar online
 
 <p align="center">
   <a href="https://denissvalentin.github.io/EscapeRoom_LaCasaDeLosSecretos/"><b>▶ Jugar ahora en el navegador</b></a>
@@ -107,7 +107,7 @@ Para cerrar el servidor, vuelve a la terminal y pulsa `Ctrl + C`.
 
 ---
 
-## 🎮 Controles
+## 🕹️ Controles
 
 ### ⌨️ Ordenador
 
@@ -248,7 +248,9 @@ Cambia `8000` por otro número en el comando (por ejemplo `8080`) y abre <http:/
 
 ## 📜 Licencia
 
-Este proyecto está bajo la licencia **GPL-3.0**. Consulta [LICENSE](LICENSE) para más detalles.
+El código de este proyecto (© 2025 Denis Stoyanov y Alba Guisado) se distribuye bajo la licencia **GPL-3.0**. Consulta [LICENSE](LICENSE) para más detalles.
+
+Las librerías de `libs/` mantienen sus propias licencias (MIT y Apache-2.0). Algunas imágenes, texturas y modelos 3D son de terceros, se usan con fines educativos y no los cubre esta licencia.
 
 <div align="center">
 
