@@ -75,9 +75,11 @@
             padding-left: 32px;
         }
 
-        /* Una sola fila: si no caben (móvil), se desliza en horizontal en vez de partirse en dos. */
+        /* Una sola fila: si no caben (móvil), se desliza en horizontal en vez de partirse en dos.
+           Reserva la altura de la pestaña activa para que la carpeta no se mueva al cambiar. */
         .pestanas {
             position: relative;
+            min-height: 54px;
             display: flex;
             flex-wrap: nowrap;
             align-items: flex-end;
@@ -472,6 +474,7 @@
             .app { padding: 16px 12px 24px; }
             .barra { padding-left: 8px; }
             .pestana { padding: 8px 12px 6px; font-size: 14px; }
+            .pestanas { min-height: 52px; }
             .pestana[aria-selected="true"] { min-height: 52px; }
             .panel { margin: 8px; }
             .panel--portada { padding: 32px 16px 72px; min-height: 0; }
