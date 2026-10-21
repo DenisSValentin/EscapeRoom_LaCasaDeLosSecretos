@@ -34,6 +34,26 @@ No hace falta descargar nada. Se necesita teclado y ratón, así que juega desde
 
 ---
 
+## 📸 La portada
+
+Al entrar verás el expediente del caso. Desde sus pestañas puedes empezar a jugar, repasar los controles, abrir la documentación del proyecto o, si te atascas, romper el sello de la solución.
+
+<div align="center">
+  <a href="https://denissvalentin.github.io/EscapeRoom_LaCasaDeLosSecretos/">
+    <img src="documentacion_extra/capturas/portada-expediente.jpg" alt="Portada: pestaña Expediente con el título La Casa de los Secretos y el botón Abrir el caso" width="800">
+  </a>
+</div>
+
+<table>
+  <tr>
+    <td align="center"><img src="documentacion_extra/capturas/portada-instrucciones.png" alt="Pestaña Instrucciones con los controles del juego" width="260"><br><sub><b>Instrucciones</b>: los controles</sub></td>
+    <td align="center"><img src="documentacion_extra/capturas/portada-archivos.png" alt="Pestaña Archivos con la memoria, los diagramas y el repositorio" width="260"><br><sub><b>Archivos</b>: memoria y diagramas</sub></td>
+    <td align="center"><img src="documentacion_extra/capturas/portada-investigadores.png" alt="Pestaña Investigadores con los autores y las técnicas usadas" width="260"><br><sub><b>Investigadores</b>: autores y técnicas</sub></td>
+  </tr>
+</table>
+
+---
+
 ## 🚀 Jugar en tu ordenador (3 pasos)
 
 ¿Prefieres jugar sin conexión o tocar el código? Descárgalo y lánzalo en local.
@@ -169,7 +189,7 @@ Cambia `8000` por otro número en el comando (por ejemplo `8080`) y abre <http:/
 ├── libs/                 # three.js y librerías auxiliares (sin dependencias externas)
 ├── imgs/                 # Texturas y vídeos
 ├── models/               # Modelos 3D (OBJ/MTL)
-└── documentacion_extra/  # Memoria en PDF y diagramas
+└── documentacion_extra/  # Memoria en PDF, diagramas y capturas de la portada
 ```
 
 ### Ciclo de juego
