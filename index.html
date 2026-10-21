@@ -77,6 +77,7 @@
         .pestanas {
             display: flex;
             flex-wrap: wrap;
+            align-items: flex-end;
             gap: 4px;
         }
 
@@ -90,6 +91,7 @@
             font-family: var(--texto);
             font-size: 15px;
             cursor: pointer;
+            transition: min-height 0.15s ease;
         }
         .pestana[aria-selected="false"]:hover { background: #D6C79F; }
 
@@ -98,16 +100,23 @@
             position: relative;
             z-index: 1;
             margin-bottom: -1px;
+            min-height: 54px;
             padding-bottom: 9px;
             background: var(--papel);
             font-family: var(--maquina);
             letter-spacing: 0.06em;
         }
 
-        .pestana:focus-visible,
+        /* Indicador de foco (solo al navegar con teclado): discreto y dentro de la paleta. */
+        .pestana:focus { outline: none; }
+        .pestana:focus-visible {
+            outline: 2px dashed var(--tinta);
+            outline-offset: -6px;
+        }
+        .boton:focus { outline: none; }
         .boton:focus-visible {
-            outline: 3px solid var(--sello-claro);
-            outline-offset: 2px;
+            outline: 2px dashed var(--papel-claro);
+            outline-offset: 4px;
         }
 
 
@@ -338,7 +347,8 @@
             gap: 20px;
         }
         .sobre summary::-webkit-details-marker { display: none; }
-        .sobre summary:focus-visible { outline: 3px solid var(--sello); outline-offset: 4px; }
+        .sobre summary:focus { outline: none; }
+        .sobre summary:focus-visible { outline: 2px dashed var(--tinta); outline-offset: 6px; }
 
         .sobre__titulo {
             display: block;
@@ -435,6 +445,7 @@
             .app { padding: 16px 12px 24px; }
             .barra { padding-left: 8px; }
             .pestana { padding: 8px 12px 6px; font-size: 14px; }
+            .pestana[aria-selected="true"] { min-height: 52px; }
             .panel { margin: 8px; }
             .panel--portada { padding: 32px 16px 72px; min-height: 0; }
             .sello { position: relative; right: auto; top: auto; align-self: flex-start; font-size: 16px; transform: rotate(-3deg); }
