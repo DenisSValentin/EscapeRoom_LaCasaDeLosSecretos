@@ -74,14 +74,39 @@
             padding-left: 32px;
         }
 
+        /* Una sola fila: si no caben (móvil), se desliza en horizontal en vez de partirse en dos. */
         .pestanas {
+            position: relative;
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             align-items: flex-end;
             gap: 4px;
+            min-width: 0;
+            max-width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+        .pestanas::-webkit-scrollbar { display: none; }
+
+        /* Degradado en el borde cuando quedan pestañas fuera de la vista */
+        .pestanas.mas-derecha {
+            -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent);
+            mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent);
+        }
+        .pestanas.mas-izquierda {
+            -webkit-mask-image: linear-gradient(to left, #000 calc(100% - 48px), transparent);
+            mask-image: linear-gradient(to left, #000 calc(100% - 48px), transparent);
+        }
+        .pestanas.mas-izquierda.mas-derecha {
+            -webkit-mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+            mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent);
         }
 
         .pestana {
+            flex: 0 0 auto;
+            white-space: nowrap;
             min-height: 44px;
             padding: 10px 24px 8px;
             border: 0;
@@ -99,7 +124,6 @@
         .pestana[aria-selected="true"] {
             position: relative;
             z-index: 1;
-            margin-bottom: -1px;
             min-height: 54px;
             padding-bottom: 9px;
             background: var(--papel);
@@ -122,6 +146,7 @@
 
         .carpeta {
             flex: 1;
+            margin-top: -1px;
             display: flex;
             flex-direction: column;
             background: var(--papel);
@@ -608,6 +633,7 @@
         // Pestañas del expediente. Cada pestaña muestra un panel; la URL (#instrucciones…)
         // recuerda la pestaña para poder enlazarla y usar atrás/adelante.
         (function () {
+            var lista = document.querySelector('[role="tablist"]');
             var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
             var ids = tabs.map(function (t) { return t.getAttribute('aria-controls').replace('panel-', ''); });
 
@@ -619,8 +645,19 @@
                     tab.tabIndex = active ? 0 : -1;
                     document.getElementById(tab.getAttribute('aria-controls')).hidden = !active;
                     if (active && focusTab) tab.focus();
+                    if (active && lista.scrollWidth > lista.clientWidth) {
+                        // En móvil, centra la pestaña elegida en la fila deslizable
+                        lista.scrollTo({ left: tab.offsetLeft - (lista.clientWidth - tab.offsetWidth) / 2, behavior: 'smooth' });
+                    }
                 });
             }
+
+            function marcarBordes() {
+                lista.classList.toggle('mas-izquierda', lista.scrollLeft > 2);
+                lista.classList.toggle('mas-derecha', lista.scrollLeft + lista.clientWidth < lista.scrollWidth - 2);
+            }
+            lista.addEventListener('scroll', marcarBordes, { passive: true });
+            window.addEventListener('resize', marcarBordes);
 
             function fromHash() {
                 select(location.hash.slice(1));
@@ -659,6 +696,7 @@
             window.addEventListener('popstate', fromHash);
             window.addEventListener('hashchange', fromHash);
             fromHash();
+            marcarBordes();
         })();
     </script>
 
