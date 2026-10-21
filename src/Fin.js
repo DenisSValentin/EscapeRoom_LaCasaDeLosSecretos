@@ -6,7 +6,7 @@ class Fin extends THREE.Object3D {
     super();
 
     // TEXTURA DE LA NOTA FINAL
-    var textura = new THREE.TextureLoader().load('../imgs/restart.jpg');
+    var textura = new THREE.TextureLoader().load('./imgs/restart.jpg');
     var material = new THREE.MeshPhongMaterial ({map: textura});
 
     this.nota = new THREE.Mesh(new THREE.BoxGeometry(40,40,0.1), material);

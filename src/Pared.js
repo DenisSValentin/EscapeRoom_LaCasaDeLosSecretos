@@ -7,7 +7,7 @@ class Pared extends THREE.Object3D {
     super();
     
     // TEXTURA DE LAS PAREDES Y EL TECHO
-    var texture = new THREE.TextureLoader().load('../imgs/pared.png');
+    var texture = new THREE.TextureLoader().load('./imgs/pared.png');
     var materialPared = new THREE.MeshPhongMaterial ({map: texture});
 
     var matBlanco= new THREE.MeshPhongMaterial({color: 0xffffff});

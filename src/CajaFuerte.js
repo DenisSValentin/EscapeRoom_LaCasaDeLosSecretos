@@ -6,7 +6,7 @@ class cajaFuerte extends THREE.Object3D {
     super();
 
     // TEXTURA CON RELIEVE PARA LA CAJA GRANDE
-    var texturaCajaFuerte = new THREE.TextureLoader().load('../imgs/relieve.jpg');
+    var texturaCajaFuerte = new THREE.TextureLoader().load('./imgs/relieve.jpg');
     var matCajaFuerte = new THREE.MeshPhongMaterial({color: 0xA4C9BB});
     matCajaFuerte.bumpMap = texturaCajaFuerte;
     matCajaFuerte.bumpScale = 0.15;
@@ -24,7 +24,7 @@ class cajaFuerte extends THREE.Object3D {
     var boton = new THREE.CylinderGeometry(10,10,10,30,30);
 
     // Botón 1
-    var textura1 = new THREE.TextureLoader().load('../imgs/uno.jpg');
+    var textura1 = new THREE.TextureLoader().load('./imgs/uno.jpg');
     var m1 = new THREE.MeshPhongMaterial ({map: textura1});
     var boton1 = new THREE.Mesh(boton, m1);
     boton1.position.set(-200,80,50);
@@ -35,7 +35,7 @@ class cajaFuerte extends THREE.Object3D {
     boton1.name = "Boton1";
 
     // Botón 2
-    var textura2 = new THREE.TextureLoader().load('../imgs/dos.jpg');
+    var textura2 = new THREE.TextureLoader().load('./imgs/dos.jpg');
     var m2 = new THREE.MeshPhongMaterial ({map: textura2});
     var boton2 = new THREE.Mesh(boton, m2);
     boton2.position.set(-200,80,0);
@@ -46,7 +46,7 @@ class cajaFuerte extends THREE.Object3D {
     boton2.name = "Boton2";
 
     // Botón 3
-    var textura3 = new THREE.TextureLoader().load('../imgs/tres.jpg');
+    var textura3 = new THREE.TextureLoader().load('./imgs/tres.jpg');
     var m3 = new THREE.MeshPhongMaterial ({map: textura3});
     var boton3 = new THREE.Mesh(boton, m3);
     boton3.position.set(-200,80,-50);
@@ -57,7 +57,7 @@ class cajaFuerte extends THREE.Object3D {
     boton3.name = "Boton3";
 
     // Botón 4
-    var textura4 = new THREE.TextureLoader().load('../imgs/cuatro.jpg');
+    var textura4 = new THREE.TextureLoader().load('./imgs/cuatro.jpg');
     var m4 = new THREE.MeshPhongMaterial ({map: textura4});
     var boton4 = new THREE.Mesh(boton, m4);
     boton4.position.set(-200,50,50);
@@ -68,7 +68,7 @@ class cajaFuerte extends THREE.Object3D {
     boton4.name = "Boton4";
 
     // Botón 5
-    var textura5 = new THREE.TextureLoader().load('../imgs/cinco.jpg');
+    var textura5 = new THREE.TextureLoader().load('./imgs/cinco.jpg');
     var m5 = new THREE.MeshPhongMaterial ({map: textura5});
     var boton5 = new THREE.Mesh(boton, m5);
     boton5.position.set(-200,50,0);
@@ -79,7 +79,7 @@ class cajaFuerte extends THREE.Object3D {
     boton5.name = "Boton5";
 
     // Botón 6
-    var textura6 = new THREE.TextureLoader().load('../imgs/seis.jpg');
+    var textura6 = new THREE.TextureLoader().load('./imgs/seis.jpg');
     var m6 = new THREE.MeshPhongMaterial ({map: textura6});
     var boton6 = new THREE.Mesh(boton, m6);
     boton6.position.set(-200,50,-50);
@@ -90,7 +90,7 @@ class cajaFuerte extends THREE.Object3D {
     boton6.name = "Boton6";
 
     // Botón 7
-    var textura7 = new THREE.TextureLoader().load('../imgs/siete.jpg');
+    var textura7 = new THREE.TextureLoader().load('./imgs/siete.jpg');
     var m7 = new THREE.MeshPhongMaterial ({map: textura7});
     var boton7 = new THREE.Mesh(boton, m7);
     boton7.position.set(-200,20,50);
@@ -101,7 +101,7 @@ class cajaFuerte extends THREE.Object3D {
     boton7.name = "Boton7";
 
     // Botón 8
-    var textura8 = new THREE.TextureLoader().load('../imgs/ocho.jpg');
+    var textura8 = new THREE.TextureLoader().load('./imgs/ocho.jpg');
     var m8 = new THREE.MeshPhongMaterial ({map: textura8});
     var boton8 = new THREE.Mesh(boton, m8);
     boton8.position.set(-200,20,0);
@@ -112,7 +112,7 @@ class cajaFuerte extends THREE.Object3D {
     boton8.name = "Boton8";
 
     // Botón 9
-    var textura9 = new THREE.TextureLoader().load('../imgs/nueve.jpg');
+    var textura9 = new THREE.TextureLoader().load('./imgs/nueve.jpg');
     var m9 = new THREE.MeshPhongMaterial ({map: textura9});
     var boton9 = new THREE.Mesh(boton, m9);
     boton9.position.set(-200,20,-50);

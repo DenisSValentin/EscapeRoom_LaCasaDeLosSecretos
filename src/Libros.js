@@ -7,7 +7,7 @@ class Libros extends THREE.Object3D {
     super();
 
     // TEXTURA DEL LIBRO
-    var texture = new THREE.TextureLoader().load('../imgs/libro.png');
+    var texture = new THREE.TextureLoader().load('./imgs/libro.png');
     var materialLibro = new THREE.MeshPhongMaterial ({map: texture});
     var matBlanco = new THREE.MeshPhongMaterial({color: 0xffffff});
 

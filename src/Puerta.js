@@ -9,7 +9,7 @@ class Puerta extends THREE.Object3D {
     // TEXTURA DE LA PUERTA
     var matBlanco= new THREE.MeshPhongMaterial({color: 0xffffff});
 
-    var texturaPomo = new THREE.TextureLoader().load('../imgs/dorado.png');
+    var texturaPomo = new THREE.TextureLoader().load('./imgs/dorado.png');
     var materialPomo = new THREE.MeshPhongMaterial ({map: texturaPomo});
 
 

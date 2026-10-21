@@ -6,7 +6,7 @@ class Marco extends THREE.Object3D {
     super();
     
     // TEXTURA DE LOS MARCOS
-    var texturaMarco = new THREE.TextureLoader().load('../imgs/materialEstanteria.jpg');
+    var texturaMarco = new THREE.TextureLoader().load('./imgs/materialEstanteria.jpg');
     var materialMarco = new THREE.MeshPhongMaterial ({map: texturaMarco});
 
     

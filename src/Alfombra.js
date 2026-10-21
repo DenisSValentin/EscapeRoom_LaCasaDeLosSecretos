@@ -6,11 +6,11 @@ class Alfombra extends THREE.Object3D {
 
     // TEXTURAS
     // La textura de la parte inferior de la alfombra
-    var texturaAlfombraInf = new THREE.TextureLoader().load('../imgs/alfombra2.png');
+    var texturaAlfombraInf = new THREE.TextureLoader().load('./imgs/alfombra2.png');
     var materialAlfombraInf = new THREE.MeshPhongMaterial ({map: texturaAlfombraInf});
 
     // La textura de la parte superior de la alfombra
-    var texturaAlfombraSup = new THREE.TextureLoader().load('../imgs/alfombra1.png');
+    var texturaAlfombraSup = new THREE.TextureLoader().load('./imgs/alfombra1.png');
     var materialAlfombraSup = new THREE.MeshPhongMaterial ({map: texturaAlfombraSup});
 
 

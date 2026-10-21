@@ -31,11 +31,11 @@ class Ordenador extends THREE.Object3D {
     this.materialFin = new THREE.MeshPhongMaterial ({map: this.texturaPantalla2});
 
     // La textura del teclado
-    var texturaTeclado = new THREE.TextureLoader().load('../imgs/Teclado.jpg');
+    var texturaTeclado = new THREE.TextureLoader().load('./imgs/Teclado.jpg');
     var materialTeclado = new THREE.MeshPhongMaterial ({map: texturaTeclado});
 
     // La textura del ratón
-    var texturaRaton = new THREE.TextureLoader().load('../imgs/Raton.png');
+    var texturaRaton = new THREE.TextureLoader().load('./imgs/Raton.png');
     var materialRaton = new THREE.MeshPhongMaterial ({map: texturaRaton});
 
 

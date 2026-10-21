@@ -5,10 +5,10 @@ class Cuadros extends THREE.Object3D {
     super();
 
     // TEXTURAS DE LOS CUADROS
-    var texture1 = new THREE.TextureLoader().load('../imgs/ElGrito.png');
+    var texture1 = new THREE.TextureLoader().load('./imgs/ElGrito.png');
     var materialCuadroGrito = new THREE.MeshPhongMaterial ({map: texture1});
     
-    var texture2 = new THREE.TextureLoader().load('../imgs/cuadro.jpg');
+    var texture2 = new THREE.TextureLoader().load('./imgs/cuadro.jpg');
     var materialCuadroNumeros = new THREE.MeshPhongMaterial ({map: texture2});
     
 

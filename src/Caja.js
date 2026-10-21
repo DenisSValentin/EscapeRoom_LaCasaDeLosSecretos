@@ -9,7 +9,7 @@ class Caja extends THREE.Object3D {
     super();
 
     // TEXTURAS
-    var textura = new THREE.TextureLoader().load('/imgs/dorado.png');
+    var textura = new THREE.TextureLoader().load('./imgs/dorado.png');
     var matDorado = new THREE.MeshPhongMaterial ({map: textura});
 
 

@@ -6,7 +6,7 @@ class Estanteria extends THREE.Object3D {
     super();
         
     // TEXTURA DE LA ESTANTERÍA
-    var texturaEstanteria = new THREE.TextureLoader().load('../imgs/materialEstanteria.jpg');
+    var texturaEstanteria = new THREE.TextureLoader().load('./imgs/materialEstanteria.jpg');
     var materialEstanteria = new THREE.MeshPhongMaterial ({map: texturaEstanteria});
     
 

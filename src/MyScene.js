@@ -219,7 +219,7 @@ class MyScene extends THREE.Scene {
     var sueloGeom = new THREE.BoxGeometry (500,0.2,500);
     
     // La textura del suelo
-    var texturaSuelo = new THREE.TextureLoader().load('../imgs/suelo.png');
+    var texturaSuelo = new THREE.TextureLoader().load('./imgs/suelo.png');
     var materialSuelo = new THREE.MeshPhongMaterial ({map: texturaSuelo});
     
     // Construimos su mesh
@@ -276,7 +276,7 @@ class MyScene extends THREE.Scene {
     this.luzAzul.target = targetAzul;
  
     // Crear la luz roja con la textura de la pista
-    var texture3 = new THREE.TextureLoader().load('../imgs/pista1.jpg');
+    var texture3 = new THREE.TextureLoader().load('./imgs/pista1.jpg');
     this.luzRoja = new THREE.SpotLight(0xff0000);
     this.luzRoja.position.set(10, 200, 16.5);
     this.luzRoja.angle = Math.PI/8;

@@ -7,7 +7,7 @@ class Mesa extends THREE.Object3D {
     // TEXTURA DE LA MESA
     var matBlanco= new THREE.MeshPhongMaterial({color: 0xffffff});
 
-    var textura = new THREE.TextureLoader().load('../imgs/mesa.png');
+    var textura = new THREE.TextureLoader().load('./imgs/mesa.png');
     var matTabla = new THREE.MeshPhongMaterial ({map: textura});
     
 

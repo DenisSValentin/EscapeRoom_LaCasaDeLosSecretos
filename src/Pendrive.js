@@ -8,10 +8,10 @@ class Pendrive extends THREE.Object3D {
     
     var materialLoader = new MTLLoader();
     var objectLoader = new OBJLoader();
-    materialLoader.load('../models/PenDrive/PenDrive.mtl',
+    materialLoader.load('./models/PenDrive/PenDrive.mtl',
     (materials) => {
       objectLoader.setMaterials(materials);
-      objectLoader.load('../models/PenDrive/PenDrive.obj',
+      objectLoader.load('./models/PenDrive/PenDrive.obj',
           (object) => {
             object.name = "Pendrive";
             this.add(object);

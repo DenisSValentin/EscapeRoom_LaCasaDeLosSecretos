@@ -6,7 +6,7 @@ class Nota extends THREE.Object3D {
     super();
 
     // TEXTURA DE LA NOTA
-    var textura = new THREE.TextureLoader().load('../imgs/nota.png');
+    var textura = new THREE.TextureLoader().load('./imgs/nota.png');
     var material = new THREE.MeshPhongMaterial ({map: textura});
 
     this.nota = new THREE.Mesh(new THREE.BoxGeometry(4,4,0.1), material);
