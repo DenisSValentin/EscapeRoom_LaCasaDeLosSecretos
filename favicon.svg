@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#1A1814"/>
-  <path d="M32 8 57 30h-6v25H13V30H7z" fill="#E3D5B5"/>
-  <path d="M32 31a6 6 0 0 0-3 11.2L27 50h10l-2-7.8A6 6 0 0 0 32 31z" fill="#1A1814"/>
+  <style>
+    path { fill: #1E1B16; }
+    @media (prefers-color-scheme: dark) { path { fill: #E3D5B5; } }
+  </style>
+  <path fill-rule="evenodd" d="M32 4 62 30h-7v30H9V30H2zm0 27a7 7 0 0 0-3.5 13.06L26 54h12l-2.5-9.94A7 7 0 0 0 32 31z"/>
 </svg>
