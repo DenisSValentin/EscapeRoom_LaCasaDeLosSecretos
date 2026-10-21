@@ -683,6 +683,9 @@ $(function () {
   // Se instancia la escena pasándole el  div  que se ha creado en el html para visualizar
   var scene = new MyScene("#WebGL-output");
 
+  // Se deja accesible para módulos opcionales como los controles táctiles (src/ControlesTactiles.js)
+  window.laCasa = scene;
+
   // Se añaden los listener de la aplicación. En este caso, el que va a comprobar cuándo se modifica el tamaño de la ventana de la aplicación.
   window.addEventListener ("resize", () => scene.onWindowResize());
 

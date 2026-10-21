@@ -283,6 +283,7 @@
 
         /* ---------- Panel: Instrucciones ---------- */
         .tabla { overflow-x: auto; }
+        .tabla[hidden] { display: none; }
 
         table { width: 100%; border-collapse: collapse; min-width: 480px; }
 
@@ -451,7 +452,8 @@
             .sello { position: relative; right: auto; top: auto; align-self: flex-start; font-size: 16px; transform: rotate(-3deg); }
             .etiqueta-foto { right: 16px; bottom: 20px; font-size: 13px; }
             .sobre { padding: 20px; }
-            th { width: auto; }
+            table { min-width: 0; }
+            th { width: 40%; padding-right: 12px; }
         }
     </style>
 </head>
@@ -490,7 +492,7 @@
                     <div class="acciones">
                         <a class="boton boton--principal" href="./juego.html">Abrir el caso</a>
                     </div>
-                    <p class="aviso-tactil" id="aviso-tactil" hidden>Este juego se controla con teclado y ratón. Para jugar, ábrelo desde un ordenador.</p>
+                    <p class="aviso-tactil" id="aviso-tactil" hidden>En pantalla táctil: joystick para moverte, arrastra el dedo para mirar y toca los objetos. Mejor con el móvil en horizontal.</p>
                 </div>
 
                 <div class="etiqueta-foto" aria-hidden="true">Evidencia A — la habitación</div>
@@ -499,13 +501,23 @@
             <!-- 01 · Instrucciones -->
             <section class="panel" role="tabpanel" id="panel-instrucciones" aria-labelledby="tab-instrucciones" tabindex="-1">
                 <h2>01 · Instrucciones para el investigador</h2>
-                <div class="tabla">
+                <div class="tabla" id="controles-teclado">
                     <table>
                         <tbody>
                             <tr><th scope="row">W A S D / flechas</th><td>Moverse por la habitación</td></tr>
                             <tr><th scope="row">Shift</th><td>Mirar con el ratón. Otra vez: liberar el cursor</td></tr>
                             <tr><th scope="row">Clic izquierdo</th><td>Examinar un objeto (con el cursor libre)</td></tr>
                             <tr><th scope="row">Ctrl</th><td>Agacharse / levantarse</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tabla" id="controles-tactiles" hidden>
+                    <table>
+                        <tbody>
+                            <tr><th scope="row">Joystick</th><td>Moverse por la habitación (abajo a la izquierda)</td></tr>
+                            <tr><th scope="row">Arrastrar el dedo</th><td>Mirar alrededor</td></tr>
+                            <tr><th scope="row">Tocar</th><td>Examinar un objeto</td></tr>
+                            <tr><th scope="row">Agacharse</th><td>Botón abajo a la derecha</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -586,9 +598,11 @@
             document.getElementById('aviso-file').classList.add('visible');
         }
 
-        // En pantallas táctiles sin ratón el juego no se puede controlar: lo avisamos.
+        // En pantallas táctiles sin ratón el juego carga controles táctiles: los explicamos.
         if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
             document.getElementById('aviso-tactil').hidden = false;
+            document.getElementById('controles-teclado').hidden = true;
+            document.getElementById('controles-tactiles').hidden = false;
         }
 
         // Pestañas del expediente. Cada pestaña muestra un panel; la URL (#instrucciones…)
