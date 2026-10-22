@@ -245,8 +245,21 @@ function aislarClics(elemento, alPulsar) {
   });
 }
 
+// Al girar el móvil o mostrar/ocultar las barras del navegador, iOS no siempre lanza "resize"
+// con las medidas ya actualizadas: volvemos a ajustar la cámara y el lienzo cuando se asientan
+function ajustarAlGirar(escena) {
+  let temporizador = null;
+  const ajustar = () => {
+    clearTimeout(temporizador);
+    temporizador = setTimeout(() => escena.onWindowResize(), 150);
+  };
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', ajustar);
+  window.addEventListener('orientationchange', ajustar);
+}
+
 async function iniciar() {
   const escena = await esperarEscena();
+  ajustarAlGirar(escena);
   const { joystick, mando, agacharse, girar } = crearInterfaz();
 
   activarJoystick(escena, joystick, mando);

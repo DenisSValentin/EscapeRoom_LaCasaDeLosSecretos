@@ -28,14 +28,13 @@
                 background-color: black;
             }
 
-            /* El lienzo ocupa siempre toda la ventana, también bajo la muesca del móvil */
+            /* El lienzo se pega a la esquina de la ventana, también bajo la muesca del móvil.
+               Su tamaño lo pone el renderer, así no se deforma la imagen */
             #WebGL-output canvas{
                 display: block;
                 position: fixed;
                 top: 0;
                 left: 0;
-                width: 100% !important;
-                height: 100% !important;
             }
 
             #Mensajes{
