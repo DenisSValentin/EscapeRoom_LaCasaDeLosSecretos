@@ -31,8 +31,8 @@ const ESTILOS = `
   }
 
   .tactil-joystick {
-    left: 24px;
-    bottom: 24px;
+    left: calc(24px + env(safe-area-inset-left));
+    bottom: calc(24px + env(safe-area-inset-bottom));
     width: 140px;
     height: 140px;
     border-radius: 50%;
@@ -53,8 +53,8 @@ const ESTILOS = `
   }
 
   .tactil-agacharse {
-    right: 24px;
-    bottom: 48px;
+    right: calc(24px + env(safe-area-inset-right));
+    bottom: calc(48px + env(safe-area-inset-bottom));
     min-width: 96px;
     min-height: 56px;
     padding: 0 16px;

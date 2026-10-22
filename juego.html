@@ -6,7 +6,7 @@
         <link rel="icon" href="./favicon.ico" sizes="32x32">
         <link rel="icon" href="./favicon.svg" type="image/svg+xml">
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <script type="text/javascript" src="./libs/jquery.js"></script>
 
         <script type="importmap">
@@ -24,7 +24,46 @@
         <style>
             body{
                 margin: 0;
-                overflow: hidden; 
+                overflow: hidden;
+                background-color: black;
+            }
+
+            /* El lienzo ocupa siempre toda la ventana, también bajo la muesca del móvil */
+            #WebGL-output canvas{
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100% !important;
+                height: 100% !important;
+            }
+
+            #Mensajes{
+                position: fixed;
+                z-index: 5;
+                right: calc(10px + env(safe-area-inset-right));
+                top: calc(10px + env(safe-area-inset-top));
+                background-color: black;
+            }
+
+            /* En móvil el mensaje va en una columna a la derecha para no tapar la nota */
+            @media (hover: none) and (pointer: coarse){
+                #Mensajes{
+                    max-width: calc(100vw - 20px - env(safe-area-inset-left) - env(safe-area-inset-right));
+                    font-size: 13px;
+                    line-height: 1.35;
+                    background-color: rgba(0, 0, 0, 0.75);
+                }
+
+                #Mensajes p{
+                    margin: 0.3em 0;
+                }
+            }
+
+            @media (hover: none) and (pointer: coarse) and (orientation: landscape){
+                #Mensajes{
+                    max-width: 24vw;
+                }
             }
         </style>
     </head>
@@ -42,7 +81,7 @@
             </video>
         </div>
 
-        <div style ="position:absolute; right: 10px; top: 10px; background-color: black;" id="Mensajes"></div>
+        <div id="Mensajes"></div>
 
         <!-- Div which will hold the Output -->
         <div id="WebGL-output"></div>
